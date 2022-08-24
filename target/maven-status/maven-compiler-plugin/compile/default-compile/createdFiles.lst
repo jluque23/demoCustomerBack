@@ -1,0 +1,17 @@
+com\example\demo\Controller\UserController.class
+com\example\demo\DemoApplication.class
+com\example\demo\Repository\DependantRepository.class
+com\example\demo\Service\DependantServiceImpl.class
+com\example\demo\Model\User.class
+com\example\demo\Service\UserServiceImpl.class
+com\example\demo\Controller\CustomerController.class
+com\example\demo\Repository\CustomerRepository.class
+com\example\demo\Model\Customer.class
+com\example\demo\Model\Dependant.class
+com\example\demo\Service\IDependantService.class
+com\example\demo\Service\CustomerServiceImpl.class
+com\example\demo\Service\ICustomerService.class
+com\example\demo\Service\IUserService.class
+com\example\demo\Repository\UserRepository.class
+com\example\demo\Dto\CustomerDto.class
+com\example\demo\Controller\DependantController.class
