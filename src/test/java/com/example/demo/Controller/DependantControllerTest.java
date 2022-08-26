@@ -13,7 +13,6 @@ import org.mockito.MockitoAnnotations;
 
 import com.example.demo.Model.Customer;
 import com.example.demo.Model.Dependant;
-import com.example.demo.Repository.DependantRepository;
 import com.example.demo.Service.IDependantService;
 
 public class DependantControllerTest {
