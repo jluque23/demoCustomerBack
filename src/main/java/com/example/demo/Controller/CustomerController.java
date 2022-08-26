@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -54,6 +55,7 @@ public class CustomerController {
         return new ResponseEntity<Customer>(customer, HttpStatus.OK);
     }
 
+    @Secured({"ROLE_ADMIN"})
     @PostMapping
     public ResponseEntity<?> saveCustomer(@Validated @RequestBody Customer customer) {
         Customer customerNew = null;
@@ -72,6 +74,7 @@ public class CustomerController {
         return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
     }
 
+    @Secured({"ROLE_ADMIN"})
     @PutMapping("/{id}")
     public ResponseEntity<?> update(@RequestBody Customer customer, @PathVariable Long id) {
         Customer actualCustomer = customerService.findCustomerById(id);

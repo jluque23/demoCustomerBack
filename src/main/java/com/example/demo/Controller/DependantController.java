@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -50,6 +51,7 @@ public class DependantController {
         return new ResponseEntity<Dependant>(dependant, HttpStatus.OK);
     }
 
+    @Secured({"ROLE_ADMIN"})
     @PostMapping
     public ResponseEntity<?> saveDependant(@Validated @RequestBody Dependant dependant) {
         Dependant dependantNew = null;
@@ -68,6 +70,7 @@ public class DependantController {
         return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
     }
 
+    @Secured({"ROLE_ADMIN"})
     @PutMapping("/{id}")
     public ResponseEntity<?> update(@RequestBody Dependant dependant, @PathVariable Long id) {
         Dependant actualDependant = dependantService.findDependantById(id);
@@ -104,6 +107,7 @@ public class DependantController {
         return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED);
     }
 
+    @Secured({"ROLE_ADMIN"})
     @DeleteMapping("{id}")
     public ResponseEntity<?> delete(@PathVariable Long id) {
         Map<String, Object> response = new HashMap<>();
