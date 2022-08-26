@@ -16,13 +16,7 @@ public class CustomerServiceImpl implements ICustomerService {
 
     @Override
     public List<Customer> findAll() {
-        List<Customer> listCustomer = null;
-        try {
-            listCustomer = customerRepository.findAll();
-        } catch (Exception e) {
-            e.getMessage();
-        }
-        return listCustomer;
+        return customerRepository.findAll();
     }
 
     @Override
