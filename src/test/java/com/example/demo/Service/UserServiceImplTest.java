@@ -40,8 +40,6 @@ public class UserServiceImplTest {
         user.setPassword("password");
         user.setRoles(Arrays.asList(role));
         user.setUsername("username");
-
-
     }
 
     @Test
