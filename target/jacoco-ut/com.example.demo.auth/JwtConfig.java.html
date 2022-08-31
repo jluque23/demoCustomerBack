@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>JwtConfig.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">demo</a> &gt; <a href="index.source.html" class="el_package">com.example.demo.auth</a> &gt; <span class="el_source">JwtConfig.java</span></div><h1>JwtConfig.java</h1><pre class="source lang-java linenums">package com.example.demo.auth;
+
+<span class="nc" id="L3">public class JwtConfig {</span>
+
+	public static final String RSA_PRIVATE = &quot;-----BEGIN RSA PRIVATE KEY-----\n&quot; + 
+			&quot;MIIEpAIBAAKCAQEAoKOZXEBnexwnTgdKoDkUV0bijEHBM6zvk1nx55Dtcb4B1njx\n&quot; + 
+			&quot;shGncdkLLjCNi10tkV4FsVcJu58vFblZfwRS9HeS5h5tyUsWmbReamO9GOg6rswl\n&quot; + 
+			&quot;Ro43jYLa0DOw3bazq20YYkDAtDDpXM0uxnYbfWxQB7ykrU9WrgL5SJR6gUS7g6ro\n&quot; + 
+			&quot;oHaaMHr0vJKHb0PEq6bQR96VeJlKpBeFIsWu2supxHg2fCbAOpII8YT5UsMTy8o/\n&quot; + 
+			&quot;4A1ld8JUp1C9h/lwukb2YH4uWk7p/W+yiDab4gmIR9BNVOMDt568ANldtMNWQ5Wt\n&quot; + 
+			&quot;Ql6UkzVxEx9HXgMhJ/AVh7AknOdu+KrsY5UA2QIDAQABAoIBAHWaL81MzTVg0Bmc\n&quot; + 
+			&quot;1vJjt1OJ7pM2FGZrhd0/bQzVmi+6JghI9NEjgY2kkz3Wh9ludszEo7BIAzUbfdIO\n&quot; + 
+			&quot;psmJdd3JqH7V6hQC5+HRHYoPyMFySnvrsqJrvZnZIa5pGWPHvNOUg9RyiWGhqUaq\n&quot; + 
+			&quot;ZEMg9lElOZXgckL7IX81aCDNqr31VXm5+edcnaQhHSK9DNMl/9cyKiiGA3D16y/8\n&quot; + 
+			&quot;pGc7nVMCJVvJK+mf8j4uxPNB3OsXWpodhGNtt1PIp5XrEeI1bA+p8De7uzYQZHy7\n&quot; + 
+			&quot;d/ZXrfzDVc8PUx5pF+SS9740kxGmsoKOOl+otpvjH/CrOddn0hJYuw9eUX8KDc9w\n&quot; + 
+			&quot;0CwOuY0CgYEA1MRKB8RK520COTYGu7OW8WjdMwUnnWuMzY7qt3kl+YXQUKdhySTR\n&quot; + 
+			&quot;7C6Wqut+9Qq4GRm4aClBAaoSyS0f3sarbg7e8O8BM1a2OoX2uSNDUqNP/qsks9MK\n&quot; + 
+			&quot;HVT7iHPUPozx1EjGn2wc2MKc50/imyVgpOn5RSstNav9n2iTEvAc4msCgYEAwUe6\n&quot; + 
+			&quot;oFLGRGmi42JAetlByVXjo8msl10Mw+irzmIx93g18qG+1/8z8KEZBa+ie/dNVzKS\n&quot; + 
+			&quot;wqYtX0woOvbgaic8VlZzq26ukg1IZC9h8RZ0Mw02n7cuumG1m7QoFaCklP4YP0WY\n&quot; + 
+			&quot;TMAaRQYOKfIhnONz3BXz98PGpMoVLg4N5Sch4ssCgYEAxyrHseWJyIE+Z5evTd2b\n&quot; + 
+			&quot;GnhzN+NHZhDbSUDTbtQ1PBKLIjTNUKDq8Q/bcjvoKDHUi4qMGNUlSQ2PcEqRXtTS\n&quot; + 
+			&quot;fL/m6dqRYSF2i+oDPuNHjf/aTiaewMZ43WRD4UOsFrGRXoqRg4KMrkve3JjnIxwm\n&quot; + 
+			&quot;D7oF4T29oFRTofkeU8f5AekCgYArotITmByDHYZU572+/oXHushmFgYNNkjHgiQn\n&quot; + 
+			&quot;uCunv1AOs02u3kMPtI89pWV9r1uasCRKJdJgjYUXqt0HmkwZAfOjZJ2tA6qwU7I9\n&quot; + 
+			&quot;B+C8FeObM3QtSBoESSwzlc0ShjtbLY8w5L4Jj1BrT+sezIs/yQUHjv+t/KHDgBDL\n&quot; + 
+			&quot;B4ay+QKBgQDDzY7wv8grmnQRI3uFoP8mCyj1A0mh1V6wiKs/Hb7bfrtBzQPAzOsc\n&quot; + 
+			&quot;UUQMpjK5I8tXz/gD2nZaYCcY5wq4+QycEqPsoUJAhMCgltJLV2o2/qvtxmeIUEO1\n&quot; + 
+			&quot;F64wz2Tr1+aoPwWwWlSmVt0XDzAaIJl9XwnuKdlyhI0OCvUu6v0+RA==\n&quot; + 
+			&quot;-----END RSA PRIVATE KEY-----&quot;;
+	
+	public static final String RSA_PUBLIC = &quot;-----BEGIN PUBLIC KEY-----\n&quot; + 
+			&quot;MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoKOZXEBnexwnTgdKoDkU\n&quot; + 
+			&quot;V0bijEHBM6zvk1nx55Dtcb4B1njxshGncdkLLjCNi10tkV4FsVcJu58vFblZfwRS\n&quot; + 
+			&quot;9HeS5h5tyUsWmbReamO9GOg6rswlRo43jYLa0DOw3bazq20YYkDAtDDpXM0uxnYb\n&quot; + 
+			&quot;fWxQB7ykrU9WrgL5SJR6gUS7g6rooHaaMHr0vJKHb0PEq6bQR96VeJlKpBeFIsWu\n&quot; + 
+			&quot;2supxHg2fCbAOpII8YT5UsMTy8o/4A1ld8JUp1C9h/lwukb2YH4uWk7p/W+yiDab\n&quot; + 
+			&quot;4gmIR9BNVOMDt568ANldtMNWQ5WtQl6UkzVxEx9HXgMhJ/AVh7AknOdu+KrsY5UA\n&quot; + 
+			&quot;2QIDAQAB\n&quot; + 
+			&quot;-----END PUBLIC KEY-----&quot;;
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

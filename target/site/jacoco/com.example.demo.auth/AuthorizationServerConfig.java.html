@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AuthorizationServerConfig.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">demo</a> &gt; <a href="index.source.html" class="el_package">com.example.demo.auth</a> &gt; <span class="el_source">AuthorizationServerConfig.java</span></div><h1>AuthorizationServerConfig.java</h1><pre class="source lang-java linenums">package com.example.demo.auth;
+
+import java.util.Arrays;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
+import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
+import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
+import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
+import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
+import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
+
+@Configuration
+@EnableAuthorizationServer
+<span class="fc" id="L21">public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {</span>
+    
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
+
+    @Autowired
+    @Qualifier(&quot;authenticationManager&quot;)
+    private AuthenticationManager authenticationManager;
+
+    @Autowired
+    private AditionalInfoToken aditionalInfoToken;
+
+    @Override
+    public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
+<span class="fc" id="L35">        security.tokenKeyAccess(&quot;permitAll()&quot;)</span>
+<span class="fc" id="L36">        .checkTokenAccess(&quot;isAuthenticated()&quot;);</span>
+<span class="fc" id="L37">    }</span>
+
+    @Override
+    public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+<span class="fc" id="L41">        clients.inMemory().withClient(&quot;demo&quot;)</span>
+<span class="fc" id="L42">        .secret(passwordEncoder.encode(&quot;12345&quot;))</span>
+<span class="fc" id="L43">        .scopes(&quot;read&quot;, &quot;write&quot;)</span>
+<span class="fc" id="L44">        .authorizedGrantTypes(&quot;password&quot;,&quot;refresh_token&quot;)</span>
+<span class="fc" id="L45">        .accessTokenValiditySeconds(3600)</span>
+<span class="fc" id="L46">        .refreshTokenValiditySeconds(3600)</span>
+        ;
+<span class="fc" id="L48">    }</span>
+
+    @Override
+    public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
+<span class="fc" id="L52">        TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();</span>
+<span class="fc" id="L53">        tokenEnhancerChain.setTokenEnhancers(Arrays.asList(aditionalInfoToken, accessTokenConverter()));</span>
+        
+<span class="fc" id="L55">        endpoints.authenticationManager(authenticationManager)</span>
+<span class="fc" id="L56">        .accessTokenConverter(accessTokenConverter())</span>
+<span class="fc" id="L57">        .tokenEnhancer(tokenEnhancerChain);</span>
+<span class="fc" id="L58">    }</span>
+
+    @Bean
+    public JwtAccessTokenConverter accessTokenConverter() {
+<span class="fc" id="L62">        JwtAccessTokenConverter jwtAccessTokenConverter = new JwtAccessTokenConverter();</span>
+<span class="fc" id="L63">        jwtAccessTokenConverter.setSigningKey(JwtConfig.RSA_PRIVATE);</span>
+<span class="fc" id="L64">        jwtAccessTokenConverter.setVerifierKey(JwtConfig.RSA_PUBLIC);</span>
+<span class="fc" id="L65">         return jwtAccessTokenConverter;</span>
+    }
+
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

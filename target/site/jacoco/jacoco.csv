@@ -1,0 +1,17 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+demo,com.example.demo.auth,JwtConfig,3,0,0,0,1,0,1,0,1,0
+demo,com.example.demo.auth,ResourceServerConfig,0,123,0,0,0,17,0,4,0,4
+demo,com.example.demo.auth,AuthorizationServerConfig,0,89,0,0,0,21,0,5,0,5
+demo,com.example.demo.auth,SpringSecurityConfig,0,33,0,0,0,11,0,5,0,5
+demo,com.example.demo.auth,AditionalInfoToken,34,3,0,0,7,1,1,1,1,1
+demo,com.example.demo.Model,User,12,47,0,0,4,21,4,13,4,13
+demo,com.example.demo.Model,Dependant,9,71,0,0,3,32,3,20,3,20
+demo,com.example.demo.Model,Customer,22,78,0,0,8,35,6,22,6,22
+demo,com.example.demo.Model,Role,10,14,0,0,4,6,3,4,3,4
+demo,com.example.demo.Controller,UserController,0,3,0,0,0,1,0,1,0,1
+demo,com.example.demo.Controller,DependantController,94,175,0,4,12,43,0,7,0,5
+demo,com.example.demo.Controller,CustomerController,70,163,0,4,9,39,0,7,0,5
+demo,com.example.demo.Service,CustomerServiceImpl,0,21,0,0,0,4,0,4,0,4
+demo,com.example.demo.Service,UserServiceImpl,9,49,1,1,2,10,1,4,0,4
+demo,com.example.demo.Service,DependantServiceImpl,0,22,0,0,0,5,0,4,0,4
+demo,com.example.demo,DemoApplication,5,24,0,2,2,7,1,3,1,2

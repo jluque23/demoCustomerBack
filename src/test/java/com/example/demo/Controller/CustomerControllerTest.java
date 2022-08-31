@@ -11,6 +11,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
+import org.springframework.dao.DataAccessException;
+import org.springframework.dao.DataIntegrityViolationException;
 
 import com.example.demo.Model.Customer;
 import com.example.demo.Service.ICustomerService;
@@ -54,16 +56,23 @@ public class CustomerControllerTest {
         Mockito.when(customerService.findCustomerById(1l)).thenReturn(customer);
         assertNotNull(customerController.findCustomerById(1l));
     }
+   
+    @Test()
+    void testFindCustomerByIdNull() {
+        Mockito.when(customerService.findCustomerById(1l)).thenReturn(null);
+        assertNotNull(customerController.findCustomerById(1l));
+    }
 
     @Test
     void testSaveCustomer() {
-        Mockito.when(customerService.save(customer)).thenReturn(customer);
+        Mockito.when(customerService.save(Mockito.any(Customer.class))).thenReturn(customer);
         assertNotNull(customerController.saveCustomer(customer));
     }
 
     @Test
     void testUpdate() {
-        Mockito.when(customerService.save(customer)).thenReturn(customer);
+        Mockito.when(customerService.findCustomerById(1l)).thenReturn(customer);
+        Mockito.when(customerService.save(Mockito.any(Customer.class))).thenReturn(customer);
         assertNotNull(customerController.update(customer, 1l));
     }
 }

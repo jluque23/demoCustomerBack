@@ -59,14 +59,22 @@ public class DependantControllerTest {
     }
 
     @Test
+    void testFindDependantByIdNull() {
+        Mockito.when(dependantService.findDependantById(1l)).thenReturn(null);
+        assertNotNull(dependantController.findDependantById(1l));
+    }
+
+    @Test
     void testSaveDependant() {
-        Mockito.when(dependantService.save(dependant)).thenReturn(dependant);
+        Mockito.when(dependantService.save(Mockito.any(Dependant.class))).thenReturn(dependant);
         assertNotNull(dependantController.saveDependant(dependant));
     }
 
     @Test
     void testUpdate() {
-        Mockito.when(dependantService.save(dependant)).thenReturn(dependant);
+        Mockito.when(dependantService.findDependantById(1l)).thenReturn(dependant);
+        Mockito.when(dependantService.save(Mockito.any(Dependant.class))).thenReturn(dependant);
+        
         assertNotNull(dependantController.update(dependant,1l));
     }
 }

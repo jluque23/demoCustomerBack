@@ -13,5 +13,4 @@ com\example\demo\Service\CustomerServiceImpl.class
 com\example\demo\Service\ICustomerService.class
 com\example\demo\Service\IUserService.class
 com\example\demo\Repository\UserRepository.class
-com\example\demo\Dto\CustomerDto.class
 com\example\demo\Controller\DependantController.class

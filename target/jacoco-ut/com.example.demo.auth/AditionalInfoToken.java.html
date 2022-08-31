@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AditionalInfoToken.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">demo</a> &gt; <a href="index.source.html" class="el_package">com.example.demo.auth</a> &gt; <span class="el_source">AditionalInfoToken.java</span></div><h1>AditionalInfoToken.java</h1><pre class="source lang-java linenums">package com.example.demo.auth;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken;
+import org.springframework.security.oauth2.common.OAuth2AccessToken;
+import org.springframework.security.oauth2.provider.OAuth2Authentication;
+import org.springframework.security.oauth2.provider.token.TokenEnhancer;
+import org.springframework.stereotype.Component;
+
+import com.example.demo.Model.User;
+import com.example.demo.Service.IUserService;
+
+@Component
+<span class="fc" id="L17">public class AditionalInfoToken implements TokenEnhancer {</span>
+
+    @Autowired
+    private IUserService userService;
+
+    @Override
+    public OAuth2AccessToken enhance(OAuth2AccessToken accessToken, OAuth2Authentication authentication) {
+
+<span class="nc" id="L25">        User user = userService.findByUsername(authentication.getName());</span>
+<span class="nc" id="L26">        Map&lt;String, Object&gt; info = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L27">        info.put(&quot;first_name&quot;, user.getFirstName());</span>
+<span class="nc" id="L28">        info.put(&quot;last_name&quot;, user.getLastName());</span>
+<span class="nc" id="L29">        info.put(&quot;email&quot;, user.getEmail());</span>
+
+<span class="nc" id="L31">        ((DefaultOAuth2AccessToken) accessToken).setAdditionalInformation(info);</span>
+<span class="nc" id="L32">        return accessToken;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
