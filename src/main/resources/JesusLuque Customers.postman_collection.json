@@ -1,0 +1,303 @@
+{
+	"info": {
+		"_postman_id": "54cbb696-a119-4048-9072-a79cf71763b8",
+		"name": "JesusLuque Customers",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "oauth/token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "demo",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "default"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9090/oauth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/customer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJsYXN0X25hbWUiOiJhZG1pbiIsImV4cCI6MTY2MTk5MTg4MiwiZmlyc3RfbmFtZSI6ImFkbWluIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJqdGkiOiIxZDU1NzhmMi1kOTBlLTQ5MWItYTZmYy0zZThiMGYyYWJmODAiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImNsaWVudF9pZCI6ImRlbW8ifQ.lUbn_zULAhFABKTBXO8EVlt4gHclDC2QrtiubwCmewiDdbOxJPFt9qnW7b0EYLoGZRrHLU2HiLVCd1X1K9JCoAKXccOWiMG29G8e_VEHv85UGN4xzB0vonmviRoBXHkGPVeUKTJJtYonjizUGaFMOw02-wr20aPyCi-63IFr6Aorcz39e_gXAlfqL5jq3eW6xO-_Wm1a-GWYr_Rt-1-l5byg9_bb0x9adVB3ujxuYn4NVKA2GQEqRhaFHP8_boPP_mtk-s5d71I9KnW-9X1jb582R1DmA50DDSJO76G1gif_EhmxMn3Q_4aHED1wJE2lyUX0oiY2qwhCz3KJeOqe9w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/customer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/customer/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJsYXN0X25hbWUiOiJhZG1pbiIsImV4cCI6MTY2MTQ2NzE3OCwiZmlyc3RfbmFtZSI6ImFkbWluIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJqdGkiOiI4NzNmMDJjZC1hMzQ2LTRhZjQtYTgwMy1iN2MyYzY2ZGM2ODMiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImNsaWVudF9pZCI6ImRlbW8ifQ.mG5aG3Z7iXDWg-1AB9tZYZCZwiZR-NAnLh2iHkN170VazRmpi8pL9mmx1yUzxwuVYu8bYWr6_b81j5D4OTd6py5ngcd2XuF4idw4sd6IH0AtB7SzfchrOqSS9-nCu12NZXhOcRrSJ38MoOI-pyZ8STG0bOZxiXCgU2j_rSxiF9j7EiHWzaHM31v2yHjJuijOl5rJ5HiVhh1uSG99oYkkomGmnM4jy-COd2gM_HqkHluhaePOKsYCRhXWjRCbraUSkiRfurJFpXNASgk8ZQH3F9vIjELa75jZ46jL8uDZgJ-M0x-vkvFH1LSUmQ1Xv_EwrHLN1BXNubl0dHV1l38XNQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/customer/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"customer",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/customer/post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\":\"luque\",\r\n    \"lastName\":\"jesus\",\r\n    \"email\":\"email@email.com\",\r\n    \"phoneNumber\":\"123456789\",\r\n    \"country\":\"country\",\r\n    \"city\":\"city\",\r\n    \"gender\":\"gender\",\r\n    \"status\":\"status\",\r\n    \"address\":\"address\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/customer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/customer/1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\":\"luque\",\r\n    \"lastName\":\"jesus\",\r\n    \"email\":\"email@email.com\",\r\n    \"phoneNumber\":\"123456789\",\r\n    \"country\":\"country\",\r\n    \"city\":\"city\",\r\n    \"gender\":\"gender\",\r\n    \"status\":\"status\",\r\n    \"address\":\"address\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/customer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/dependant/8",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJsYXN0X25hbWUiOiJhZG1pbiIsImV4cCI6MTY2MTk5NDM3NSwiZmlyc3RfbmFtZSI6ImFkbWluIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJqdGkiOiI5OTViMThlZC0yNDJkLTRmNmQtOGY1Mi1mMzdiYTMyOWNjNzQiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImNsaWVudF9pZCI6ImRlbW8ifQ.Y-jXPAIKEBQfvjEWTo5CMVmvmNLbv_Xl8f1QJCKPo6a0hSMD7Og0tqwUyrbUkcxHFF0Luotec-DGRWawtFNCVzWREmclznUpohXPydBtJ_jPm83-lTZ1tai_dAYw7C8scWfdiy3DWWDsgaHqV-WYvjc6qdXfEK_gj0ZMKP5bpwptKCcGYmXYGYF3IVNwUJjoN35GD-SolXnlH2oohKn3hwJkLr2Uxi1nBVygpgMbg-zB6rTQ6ucH83Px-MJR0-tVVz5ZceR5h8P4QZa2N1HuZwxrn49y5EahyYktoR--yOrQlK9c25FPzYxptVJKIBse3-E8P4JiHAwm7TjyW61gAg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/dependant/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"dependant",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/dependant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Jane\",\r\n    \"lastName\": \"Doe\",\r\n    \"relationToCostumer\": \"sister\",\r\n    \"country\": \"tamaulipas\",\r\n    \"city\": \"tampico\",\r\n    \"gender\": \"female\",\r\n    \"address\": \"Matamoros 507A\",\r\n    \"createAt\": null,\r\n    \"updatedAt\": null,\r\n    \"customer\": {\"id\":1}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/dependant",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"dependant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/dependant/delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/dependant/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"dependant",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/dependant/put",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Jane\",\r\n    \"lastName\": \"Doe\",\r\n    \"relationToCostumer\": \"sister\",\r\n    \"country\": \"tamaulipas\",\r\n    \"city\": \"tampico\",\r\n    \"gender\": \"female\",\r\n    \"address\": \"Matamoros 507A\",\r\n    \"createAt\": null,\r\n    \"updatedAt\": null,\r\n    \"customer\": {\"id\":1}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/dependant/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"dependant",
+						"8"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
